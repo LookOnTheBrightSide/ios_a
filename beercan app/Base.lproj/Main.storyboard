@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="beercan_app" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,90 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="100" verticalHuggingPriority="100" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xxj-Bh-fGU">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="location"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="136" y="236" width="128" height="128"/>
+                                </variation>
+                                <connections>
+                                    <action selector="record_audio:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EDq-Nl-WSt"/>
+                                </connections>
+                            </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="recording ..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v8N-3Y-eqY">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="1iF-4F-fKt"/>
+                                    <constraint firstAttribute="width" constant="92" id="Ml9-Py-bF9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                <color key="textColor" red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="1iF-4F-fKt"/>
+                                        <exclude reference="Ml9-Py-bF9"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="154" y="378" width="92" height="21"/>
+                                    <mask key="constraints">
+                                        <include reference="1iF-4F-fKt"/>
+                                        <include reference="Ml9-Py-bF9"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="v8N-3Y-eqY" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="409" id="18l-yi-TKz"/>
+                            <constraint firstItem="v8N-3Y-eqY" firstAttribute="centerX" secondItem="Xxj-Bh-fGU" secondAttribute="centerX" id="3eu-bd-rJM"/>
+                            <constraint firstItem="Xxj-Bh-fGU" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="FYU-40-9G3"/>
+                            <constraint firstItem="Xxj-Bh-fGU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Reg-LC-yTq"/>
+                            <constraint firstItem="v8N-3Y-eqY" firstAttribute="top" secondItem="Xxj-Bh-fGU" secondAttribute="bottom" constant="66" id="e46-Nh-PzY"/>
+                            <constraint firstItem="v8N-3Y-eqY" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="409" id="h5m-hn-puA"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="Xxj-Bh-fGU"/>
+                                <exclude reference="v8N-3Y-eqY"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="FYU-40-9G3"/>
+                                <exclude reference="Reg-LC-yTq"/>
+                                <exclude reference="18l-yi-TKz"/>
+                                <exclude reference="3eu-bd-rJM"/>
+                                <exclude reference="e46-Nh-PzY"/>
+                                <exclude reference="h5m-hn-puA"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="Xxj-Bh-fGU"/>
+                                <include reference="v8N-3Y-eqY"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="FYU-40-9G3"/>
+                                <include reference="Reg-LC-yTq"/>
+                                <include reference="18l-yi-TKz"/>
+                                <include reference="3eu-bd-rJM"/>
+                                <include reference="e46-Nh-PzY"/>
+                                <include reference="h5m-hn-puA"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="label_text" destination="v8N-3Y-eqY" id="iaK-YQ-WJS"/>
+                        <outlet property="recording" destination="v8N-3Y-eqY" id="SHC-4t-60m"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="244.5" y="322"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="location" width="128" height="128"/>
+    </resources>
 </document>
